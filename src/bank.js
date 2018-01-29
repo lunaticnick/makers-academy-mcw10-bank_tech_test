@@ -1,17 +1,19 @@
-function Bank() {
- this.balance = 0
+const MINIMUM_BALANCE = 0
+
+function Account() {
+ this.balance = MINIMUM_BALANCE
 }
 
-Bank.prototype.showBalance = function() {
+Account.prototype.showBalance = function() {
   return this.balance
 };
 
-Bank.prototype.deposit = function(amount) {
+Account.prototype.deposit = function(amount) {
   this.balance += amount
 };
 
-Bank.prototype.withdraw = function(amount) {
-  if(this.balance > 0) {
+Account.prototype.withdraw = function(amount) {
+  if(this.balance > MINIMUM_BALANCE) {
     this.balance -= amount
   } else {
     throw Error ("Not enough funds in account");

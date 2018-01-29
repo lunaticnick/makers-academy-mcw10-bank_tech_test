@@ -42,6 +42,13 @@ I would like to be able to withdraw money from the bank.
 
 ```
 As a user,
+So that I cannot go overdrawn,
+I would like to be able to only withdraw money up to my available balance from the bank.
+```
+
+
+```
+As a user,
 So that I can keep track of my spending,
 I would like to be able to see a statement.
 ```
