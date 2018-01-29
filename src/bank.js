@@ -11,5 +11,10 @@ Bank.prototype.deposit = function(amount) {
 };
 
 Bank.prototype.withdraw = function(amount) {
-  this.balance -= amount
+  if(this.balance > 0) {
+    this.balance -= amount
+  } else {
+    throw Error ("Not enough funds in account");
+  }
+
 };
