@@ -36,4 +36,13 @@ describe("Account", function() {
 
   });
 
+  describe("#showBankStatement", function() {
+
+    it("should be able to display a statement of all tranasction", function() {
+      account.deposit(100)
+      expect(account.showBankStatement()).toBe("   Date      ||     Credit    ||     Debit     ||     Balance\n29/01/2018    ||    100    ||        ||    100\n");
+    });
+
+  });
+
 });
