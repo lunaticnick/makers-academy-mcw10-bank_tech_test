@@ -30,6 +30,10 @@ describe("Bank", function() {
       expect(bank.showBalance()).toEqual(50);
     });
 
+    it("should throw an error if attempt to withdrawing more money than balance", function() {
+       expect(function(){ bank.withdraw(5) }).toThrowError("Not enough funds in account")
+    });
+
   });
 
 });
