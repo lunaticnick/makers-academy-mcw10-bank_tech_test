@@ -22,4 +22,14 @@ describe("Bank", function() {
 
   });
 
+  describe("#withdraw", function() {
+
+    it("should be able to withdraw money to the account", function() {
+      bank.deposit(100)
+      bank.withdraw(50)
+      expect(bank.showBalance()).toEqual(50);
+    });
+
+  });
+
 });
