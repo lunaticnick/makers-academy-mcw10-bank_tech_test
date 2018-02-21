@@ -24,7 +24,6 @@ Account.prototype.withdraw = function(amount) {
     var transaction = new Transaction();
     this._balance -= amount;
     var withdrawTransaction = transaction.recordDebit(amount);
-    // withdrawTransaction.unshift("||");
     withdrawTransaction.push(this.showBalance());
     // withdrawTransaction.push("\n");
     var transactionString = withdrawTransaction.join("    ||    ");

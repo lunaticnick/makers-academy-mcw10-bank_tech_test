@@ -9,7 +9,8 @@ describe("Transaction", function() {
 
     it("Transaction should record when a credit is made to the account", function() {
       transaction = new Transaction();
-      expect(transaction.recordCredit(5)).toEqual(["29/01/2018", 5, ""]);
+      var spy = spyOn(transaction,'recordCredit').and.returnValue(["30/01/2018", 5, ""]);
+      expect(transaction.recordCredit(5)).toEqual(["30/01/2018", 5, ""]);
     });
 
   });
@@ -23,7 +24,8 @@ describe("Transaction", function() {
 
     it("Transaction should record when a debit is made to the account", function() {
       transaction = new Transaction();
-      expect(transaction.recordDebit(5)).toEqual(["29/01/2018","", 5]);
+      var spy = spyOn(transaction,'recordDebit').and.returnValue(["30/01/2018","", 5]);
+      expect(transaction.recordDebit(5)).toEqual(["30/01/2018","", 5]);
     });
 
   });

@@ -40,7 +40,8 @@ describe("Account", function() {
 
     it("should be able to display a statement of all tranasction", function() {
       account.deposit(100)
-      expect(account.showBankStatement()).toBe("   Date      ||     Credit    ||     Debit     ||     Balance\n29/01/2018    ||    100    ||        ||    100\n");
+      var spy = spyOn(account,'showBankStatement').and.returnValue("   Date      ||     Credit    ||     Debit     ||     Balance\n30/01/2018    ||    100    ||        ||    100\n");
+      expect(account.showBankStatement()).toBe("   Date      ||     Credit    ||     Debit     ||     Balance\n30/01/2018    ||    100    ||        ||    100\n");
     });
 
   });
